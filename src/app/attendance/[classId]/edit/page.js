@@ -17,7 +17,7 @@ export default function EditAttendance() {
       try {
         const token = localStorage.getItem('token')
         const tenantId = localStorage.getItem('tenantId')
-        const response = await fetch(`http://localhost:3002/api/schools/attendance/${classId}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/schools/attendance/${classId}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'X-Tenant-ID': tenantId,
@@ -63,7 +63,7 @@ export default function EditAttendance() {
     try {
       const token = localStorage.getItem('token')
       const tenantId = localStorage.getItem('tenantId')
-      const response = await fetch(`http://localhost:3002/api/schools/attendance/${classId}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/schools/attendance/${classId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
