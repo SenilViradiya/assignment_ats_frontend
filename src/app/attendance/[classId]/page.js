@@ -29,7 +29,7 @@ export default function Attendance() {
         const data = await response.json()
         setStudents(data.students)
 
-        // Initialize the attendance state for each student (default to absent)
+        // Initialize the attendance (default to absent)
         const initialAttendance = data.students.reduce((acc, student) => {
           acc[student._id] = false; // Assuming default as 'Absent'
           return acc;

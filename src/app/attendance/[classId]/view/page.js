@@ -7,13 +7,13 @@ import ProtectedRoute from '../../../../components/ProtectedRoute'
 
 export default function ViewAttendance({ params: paramsPromise }) {
   const [attendance, setAttendance] = useState([])
-  const [students, setStudents] = useState([]) // To store student data
+  const [students, setStudents] = useState([]) 
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [classId, setClassId] = useState(null)
   const router = useRouter()
 
-  // Unwrap the `params` Promise
+  // Unwrap the `params` Promise for get class id
   useEffect(() => {
     const unwrapParams = async () => {
       const resolvedParams = await paramsPromise
